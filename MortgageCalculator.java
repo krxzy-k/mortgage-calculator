@@ -13,8 +13,27 @@ public class MortgageCalculator {
         System.out.print("Enter anuall intrest rate(percentage value: ");
         double anuallIntrestRate = input.nextDouble();
 
-        System.out.print("Enter period(years): ");
-        double period = input.nextDouble();
+        while (true) {
+            System.out.print("Enter annuall intrest rate(percentage value): ");
+            annuallIntrestRate = input.nextDouble();
+            if (annuallIntrestRate >=1 && annuallIntrestRate <= 30) {
+                break;
+            } else {
+                System.out.println("Enter a percentage between 1 & 30");
+            }
+        }
+
+        while (true) {
+            System.out.print("Enter period(years): ");
+            period = input.nextDouble();
+            if (period >= 1 && period <= 30) {
+                break;
+            } else{
+                System.out.println("Enter a period betweeen 1 & 30");
+            }
+
+        }
+        input.close();
 
         // calculation
 
