@@ -4,6 +4,10 @@ import java.util.Scanner;
 public class MortgageCalculator {
     public static void main(String[] Args) {
 
+        double principlaAmount = 0;
+        double annuallIntrestRate = 0;
+        double period = 0;
+
         System.out.println("===Mortgage Calculator===");
         Scanner input = new Scanner(System.in);
 
