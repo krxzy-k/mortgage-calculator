@@ -11,11 +11,16 @@ public class MortgageCalculator {
         System.out.println("===Mortgage Calculator===");
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter principle amount: ");
-        double principlaAmount = input.nextDouble();
+        while (true) {
+            System.out.print("Enter principle amount(1K - 1M): ");
+            principlaAmount = input.nextDouble();
+            if (principlaAmount >= 1_000 && principlaAmount <= 1_000_000) {
+                break;
+            } else {
+                System.out.println("Enter amount between 1K & 1M");
+            }
 
-        System.out.print("Enter anuall intrest rate(percentage value: ");
-        double anuallIntrestRate = input.nextDouble();
+        }
 
         while (true) {
             System.out.print("Enter annuall intrest rate(percentage value): ");
@@ -41,7 +46,7 @@ public class MortgageCalculator {
 
         // calculation
 
-        double monthlyIntrestRate = (anuallIntrestRate/12)/100;
+        double monthlyIntrestRate = (annuallIntrestRate/12)/100;
 
         int periodInMonths = (int) period*12;
 
@@ -54,9 +59,6 @@ public class MortgageCalculator {
         double mortgage = topFraction/bottomFraction;
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         String mortgageString = currency.format(mortgage);
-        System.out.println("Your mortgage is: " + mortgageString);
-
-        input.close();
-
+        System.out.print("Your mortgage is: " + mortgageString);
     }
 }
