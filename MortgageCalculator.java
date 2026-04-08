@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class MortgageCalculator {
     public static void main(String[] Args) {
 
+        final int monthsInAYear = 12;
+        final double percentage = 100;
         double principlaAmount = 0;
         double annuallIntrestRate = 0;
         double period = 0;
@@ -46,7 +48,7 @@ public class MortgageCalculator {
 
         // calculation
 
-        double monthlyIntrestRate = (annuallIntrestRate/12)/100;
+        double monthlyIntrestRate = (annuallIntrestRate/monthsInAYear)/percentage;
 
         int periodInMonths = (int) period*12;
 
